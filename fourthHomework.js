@@ -1,25 +1,27 @@
 
+
 function concatStrings (str, separator) {
     return function (nextStr) {
+        if (typeof nextStr !== 'string'){
 
-        if (typeof nextStr !== 'string') {
-
-            return console.log(str);
+            return str;
             
         } else {
 
             if (separator && typeof separator === 'string') {
+
                 return concatStrings (`${str}${separator}${nextStr}`, separator);
 
+            
             } else {
-                return concatStrings (`${str}${nextStr}`);
+
+            return concatStrings (`${str}${nextStr}`);
+
             }    
             
         } 
     };
 }
-
-
 
 
 
